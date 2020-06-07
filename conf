@@ -1,0 +1,36 @@
+# [OPTIONAL]
+# Native Compilation/Preprocessor flags for C and C++. Additional settings
+# for the target architecture are also declared in common/build-profiles/<arch>.sh.
+#
+XBPS_CFLAGS="-march=native -O3 -fstack-clash-protection -pipe"
+XBPS_CXXFLAGS="${XBPS_CFLAGS}"
+
+# [OPTIONAL]
+# Linker flags passed to the compiler.
+#
+#XBPS_LDFLAGS=""
+
+# [REQUIRED]
+# Command to execute to gain root privileges when using the `update-sys`
+# target to update your system.
+#
+XBPS_SUCMD="doas /bin/sh -c"
+
+# [OPTIONAL]
+# Enable or disable ccache when building packages. The ccache directory
+# is stored in the hostdir, i.e hostdir/ccache. For go builds this enables
+# caching in hostdir/gocache.
+#
+XBPS_CCACHE=yes
+
+# [OPTIONAL]
+# Number of parallel jobs to execute when building packages that
+# use make(1) or alike commands.
+#
+XBPS_MAKEJOBS=8
+
+# [OPTIONAL]
+# Enable building package locally that are restricted legally for redistribution.
+# NOTE: you can't distribute the sources or binaries for such kind of packages.
+#
+XBPS_ALLOW_RESTRICTED=yes
